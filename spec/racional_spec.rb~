@@ -1,0 +1,16 @@
+require "lib/racional.rb"
+
+describe Fraccion do 
+	before :each do
+		@f1 = Fraccion.new(1,2)
+	end
+	
+	describe "# Almacenamiento de valores" do
+		it "Se almacena correctamente el numerador NUM" do
+			@f1.num.should eq(1)
+		end
+		it "Se almacena correctamente el demoninador DEN" do
+			@f1.den.should eq(2)
+		end
+	end
+end

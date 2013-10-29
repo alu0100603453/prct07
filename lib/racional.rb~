@@ -1,0 +1,9 @@
+class Fraccion
+	attr_reader :num, :den
+	def initialize(num,den)
+		@n,@d = num.to_i , den.to_i
+	end
+	def to_s
+		"#{@n} / #{@d}"
+	end
+end

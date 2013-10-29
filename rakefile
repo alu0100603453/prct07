@@ -1,0 +1,28 @@
+task :default => :spec
+
+desc "Ejecutar las espectativas de la clase Fraccion"
+task :spec do
+  sh "rspec -I. spec/racional_spec.rb"
+end
+
+desc "Ejecutar con documentacion"
+task :test do
+  sh "rspec -I. spec/racional_spec.rb --format documentation"
+end
+
+desc "Ejecutar y dar Salida en HTML"
+task :thtml do
+  sh "rspec -I. spec/racional_spec.rb --format html > test.html"
+end
+
+desc "Ejecutar y Abrir la Salida HTML"
+task :open do
+  sh "rspec -I. spec/racional_spec.rb --format html > test.html"
+  sh "firefox test.html"
+end
+
+desc "Ejecutar el Main"
+task :bin do
+  sh "rspec -I. lib/main.rb"
+end
+
