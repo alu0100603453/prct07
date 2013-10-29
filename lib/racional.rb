@@ -1,4 +1,5 @@
 class Fraccion
+	include Comparable
 	attr_reader :n, :d
 	def initialize(num,den)
 		@n,@d = num.to_i , den.to_i
@@ -48,12 +49,15 @@ class Fraccion
 		d = @d*other.n
 		Fraccion.new(n/gcd(n,d),d/gcd(n,d))
 	end
-
+	def <=> (other)
+		(@n.to_f / @d)<=>(other.n.to_f / other.d)
+	end
+/
 	def ==(other)
 		check = false
 		if(@n == other.n && @d == other.d)
 			check = true
-		end
+		·end
 	end
 
 	def <(other)
@@ -91,7 +95,7 @@ class Fraccion
 		end
 		check
 	end
-
+/
 	def imp_to_mix
 		base = @n/@d
 		num = @n % @d
@@ -135,3 +139,8 @@ class Fraccion
 		f1%f2
 	end
 end
+
+
+
+
+
