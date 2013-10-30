@@ -52,7 +52,7 @@ class Fraccion
 	def <=> (other)
 		(@n.to_f / @d)<=>(other.n.to_f / other.d)
 	end
-/
+=begin
 	def ==(other)
 		check = false
 		if(@n == other.n && @d == other.d)
@@ -95,7 +95,7 @@ class Fraccion
 		end
 		check
 	end
-/
+=end
 	def imp_to_mix
 		base = @n/@d
 		num = @n % @d
